@@ -7,7 +7,8 @@ exports.handler = (event, ctx, callback) => {
     isBase64Encode: false,
     statusCode: 200,
     headers: {
-      'Content-Type': 'application/javascript'
+      'Content-Type': 'application/javascript',
+      'Content-Disposition': 'attachment; filename="file.js"'
     },
     body: fs.readFileSync(path.resolve(__dirname, './file.js')).toString()
   });
