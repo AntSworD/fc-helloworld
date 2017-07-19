@@ -5,6 +5,8 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 exports.handler = (event, ctx, callback) => {
   console.log('invoke fc_helloworld!');
   callback(null, {
-    body: `Hello world! NODE_ENV: ${process.env.NODE_ENV}`
+    isBase64Encoded: false,
+    statusCode: 200,
+    body: `Hello world! NODE_ENV: ${ process.env.NODE_ENV }`
   });
 };
